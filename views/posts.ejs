@@ -1,0 +1,23 @@
+﻿<div class="row-fluid">
+	<% posts.forEach(function(post, index) {	
+	if (index % 3 == 0) { %>
+	<ul class="thumbnails">
+	<%} %>
+		<li class="span4">
+			<div class="thumbnail">
+				<img data-src="holder.js/300x200" alt="300x200" src="/img/tangyan-<%= index %>.jpg" style="width: 300px; height: 200px;">
+				<div class="caption">
+					<h3><%= post.user %> 说</h3>
+					<p><%= post.title %> ; Time:<%= post.time %></p>
+					<p><a href="/u/<%= post.user %>" class="btn btn-primary">link</a> <a href="/u/<%= post.user %>" class="btn">user</a></p>
+				</div>
+			</div>
+		</li>
+		<% if (index % 3 == 2) { %>
+			</ul><!-- end row -->
+		<% } %>
+	<%}) %>
+	<% if (posts.length % 3 != 0) { %>
+	</ul><!-- end row -->
+	<%} %>
+</div>

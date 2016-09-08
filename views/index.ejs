@@ -1,0 +1,15 @@
+﻿<% if (!user) { %>
+<div class="hero-unit">
+  <h1>欢迎来到博客系统</h1>
+  <p>该系统是一个基于 Node.js，使用Express 4.x框架搭建的博客系统。</p>
+  <p>
+    <a class="btn btn-primary btn-large" href="/login">登录</a>
+    <a class="btn btn-large" href="/reg">立即注册</a>
+  </p>
+</div>
+<% } else { %>
+<%- partial('say') %>
+  <% } %>
+
+<%- partial('posts', {posts:posts}) %> 
+
